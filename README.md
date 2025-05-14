@@ -55,8 +55,16 @@ _ = p.publish_event(
 
 URL yang sama pada kode yang ada di sisi subscriber menunjukkan kalau kedua aplikasi (publisher dan subscriber) terhubung pada instance message broker yang sama, yaitu yang terletak pada `localhost:5672` dan dengan menggunakan kredensial yang sama, yaitu kredensial default dari RabbitMQ `guest:guest`. Bagian ini memastikan message broker yang terhubung dari kedua sisi aplikasi sama dan data yang dikirim dari publisher dapat diterima oleh subscriber lewat broker yang sama.
 
-## Running RabbitMQ as message broker on `localhost`
+## Running RabbitMQ as Message Broker on `localhost`
 
 <picture>
     <img src="img/rabbitmq.png">
 </picture>
+
+## Sending and Processing Event
+
+<picture>
+    <img src="img/events.png">
+</picture>
+
+Pada gambar di atas, publisher mengirim 5 event ke broker RabbitMQ agar dapat ditahan oleh broker tersebut terlebih dahulu. Hal ini terjadi dimulai dari setelah terkoneksi dengan broker, lalu publisher mengirim 5 event tersebut lalu broker pun akan mengirim event-event tersebut pada penerima yang dituju (yaitu pada kasus ini adalah si subscriber). Setelah menerima event yang diterima dari broker, barulah subscriber akan memproses dan menampilkan hasil dari apa yang ia terima.

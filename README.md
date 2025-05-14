@@ -68,3 +68,11 @@ URL yang sama pada kode yang ada di sisi subscriber menunjukkan kalau kedua apli
 </picture>
 
 Pada gambar di atas, publisher mengirim 5 event ke broker RabbitMQ agar dapat ditahan oleh broker tersebut terlebih dahulu. Hal ini terjadi dimulai dari setelah terkoneksi dengan broker, lalu publisher mengirim 5 event tersebut lalu broker pun akan mengirim event-event tersebut pada penerima yang dituju (yaitu pada kasus ini adalah si subscriber). Setelah menerima event yang diterima dari broker, barulah subscriber akan memproses dan menampilkan hasil dari apa yang ia terima.
+
+## Monitoring Chart Based on Publisher
+
+<picture>
+    <img src="img/chart.png">
+</picture>
+
+Pada gambar di atas, terjadi lonjakan pada setiap kali RabbitMQ menerima message baru. Spike yang dihasilkan pada chart **Message rates** di atas berkaitan dengan seberapa sering publisher mengirim message baru ke broker RabbitMQ. Semakin cepat interval per message yang dikirim dan/atau semakin banyak message yang dikirim dalam setiap kali pencatatan pada chart, maka semakin tajam dan membanyak pula spike message rates nya.

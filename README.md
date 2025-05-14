@@ -54,3 +54,9 @@ _ = p.publish_event(
 > The url of: `amqp://guest:guest@localhost:5672` is the same as in the subscriber program, what does it mean?
 
 URL yang sama pada kode yang ada di sisi subscriber menunjukkan kalau kedua aplikasi (publisher dan subscriber) terhubung pada instance message broker yang sama, yaitu yang terletak pada `localhost:5672` dan dengan menggunakan kredensial yang sama, yaitu kredensial default dari RabbitMQ `guest:guest`. Bagian ini memastikan message broker yang terhubung dari kedua sisi aplikasi sama dan data yang dikirim dari publisher dapat diterima oleh subscriber lewat broker yang sama.
+
+## Running RabbitMQ as message broker on `localhost`
+
+<picture>
+    <img src="img/rabbitmq.png">
+</picture>
